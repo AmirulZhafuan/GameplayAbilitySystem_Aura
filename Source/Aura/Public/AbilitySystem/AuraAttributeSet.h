@@ -18,7 +18,7 @@ struct FEffectProperties
 {
 	GENERATED_BODY()
 
-	FEffectProperties();
+	FEffectProperties(){};
 
 	UPROPERTY()
 	FGameplayEffectContextHandle EffectContextHandle;
@@ -92,5 +92,5 @@ public:
 	void OnRep_MaxMana(const FGameplayAttributeData& OldMaxMana) const;
 
 private:
-	void SetEffectProperties(const FGameplayEffectModCallbackData& Data, FEffectProperties& Props) const;
+	static void SetEffectProperties(const FGameplayEffectModCallbackData& Data, FEffectProperties& Props);
 };
